@@ -3,13 +3,13 @@
 
 ## Compilação em máquina local
 
-```bash
+```sh
 mpicc file.c -o file_exec
 ```
 
 ## Execução em máquina local
 
-```mpi
+```sh
 mpirun -np 1 ./file_exec
 ```
 
@@ -18,13 +18,13 @@ mpirun -np 1 ./file_exec
 
 ## Compilação em máquina remota (LAD)
 
-```bash
+```sh
 mpicc file.c -o file_exec
 ```
 
 ## Execução em máquina remota (LAD)
 
-```bash
+```sh
 srun -N 2 -n 2 ./file_exec
 ```
 
@@ -38,13 +38,13 @@ srun -N 2 -n 2 ./file_exec
 
 Para realizar uma execução com o propósito de medir o tempo transcorrido é importante garantir que será realizada sem a interferência de outra aplicação na mesma máquina, ou seja, com a utilização esclusiva dos recursos. Pra isto usaremos o parâmetro **--exclusive**.
 
-```bash
+```sh
 srun --exclusive -N 2 -n 2 ./file_exec
 ```
 
 ## Execução de mais processos que processadores (acima do HT)
 
-```bash
+```sh
 srun --oversubscribe -N 2 -n 2 ./file_exec
 ```
 
