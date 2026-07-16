@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.prose :not(pre) > code {
+  color: #1e3a5f;
+  background-color: #eff6ff;
+}
+
+.dark .prose :not(pre) > code {
+  color: #e0f2fe;
+  background-color: #143652;
+}
+
+.code-theme-light pre {
+  background-color: #eff6ff !important;
+  border: 1px solid #bfdbfe;
+}
+
+.code-theme-dark {
+  display: none;
+}
+
+.dark .code-theme-light {
+  display: none;
+}
+
+.dark .code-theme-dark {
+  display: block;
+}
+
+code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+code .line {
+  display: inline-block;
+}
+
+code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 1rem;
+  margin-right: 1.5rem;
+  display: inline-block;
+  text-align: right;
+  color: #627e97;
+}
+
+.line-highlight {
+  background-color: #dbeafe;
+}
+
+.dark .line-highlight {
+  background-color: #143652;
+}

@@ -1,5 +1,8 @@
-
-# Compilação e Execução de Programas MPI
+---
+title: "Compilação e Execução de Programas MPI"
+publishedAt: "2026-07-15"
+summary: "Comandos para compilar e executar programas MPI localmente e em uma máquina remota."
+---
 
 ## Compilação em máquina local
 
@@ -13,7 +16,6 @@ mpicc file.c -o file_exec
 mpirun -np 1 ./file_exec
 ```
 
->[!TIP]
 > onde `np` é o número de processos MPI que serão criados.
 
 ## Compilação em máquina remota (LAD)
@@ -28,10 +30,8 @@ mpicc file.c -o file_exec
 srun -N 2 -n 2 ./file_exec
 ```
 
->[!TIP]
 > onde `N` é o número de nodos alocados na máquina e `n` o número total de processos MPI que serão criados.
 
->[!TIP]
 > atente que a saída de tela só aparece no terminal **após** a execução toda do programa (`MPI_FINALIZE`).
 
 ## Execução exclusiva na máquina (para fins de medição de tempo)
@@ -47,10 +47,3 @@ srun --exclusive -N 2 -n 2 ./file_exec
 ```sh
 srun --oversubscribe -N 2 -n 2 ./file_exec
 ```
-
-
-
-
-
-
-
